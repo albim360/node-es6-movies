@@ -76,3 +76,12 @@ function getAverageRating(moviesAndSeries, genre) {
 }
 
 console.log(getAverageRating(moviesAndSeries, 'Action'));
+
+// Creiamo una funzione che restituisca la lista di tutti i generi dei film, senza che questi si ripetano.
+function listedGenre (moviesAndSeries) {
+  const genres = moviesAndSeries.map(movieOrSeries => movieOrSeries.genre);
+  return [...new Set(genres)]; 
+
+}
+
+console.log(listedGenre(moviesAndSeries));

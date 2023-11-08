@@ -58,4 +58,21 @@ class TvSeries extends Movie {
   }
 }
 
+// Tramite la funzione .map(), creare un nuovo array dove per ogni elemento dell’array di oggetti viene creata un istanza della classe Movie o TvSerie in base al type e salvata nel nuovo array.
+const moviesAndSeriesMapped = moviesAndSeries.map(movieOrSeries => {
+  if (movieOrSeries.type === 'movie') {
+    return new Movie(movieOrSeries.title, movieOrSeries.year, movieOrSeries.genre, movieOrSeries.rating);
+  } else {
+    return new TvSeries(movieOrSeries.title, movieOrSeries.year, movieOrSeries.genre, movieOrSeries.rating, movieOrSeries.seasons);
+  }
+})
 
+// Creiamo una funzione che restituisca la media dei voti di tutti i film per un determinato genere. Prevedere un argomento per la lista dei film ed uno per il genere.
+function getAverageRating(moviesAndSeries, genre) { 
+  const filteredMoviesAndSeries = moviesAndSeries.filter(movieOrSeries => movieOrSeries.genre === genre);
+  const ratings = filteredMoviesAndSeries.map(movieOrSeries => movieOrSeries.rating);
+  const averageRating = ratings.reduce((a, b) => a + b, 0) / ratings.length;
+  return averageRating;
+}
+
+console.log(getAverageRating(moviesAndSeries, 'Action'));

@@ -85,3 +85,5 @@ function listedGenre (moviesAndSeries) {
 }
 
 console.log(listedGenre(moviesAndSeries));
+
+// Creiamo una funzione che filtri i film in base ad un genere passato come argomento e ne ritorni un array con all’interno il risultato della funzione toString() di ogni film.

@@ -67,6 +67,8 @@ const moviesAndSeriesMapped = moviesAndSeries.map(movieOrSeries => {
   }
 })
 
+console.log(moviesAndSeriesMapped);
+
 // Creiamo una funzione che restituisca la media dei voti di tutti i film per un determinato genere. Prevedere un argomento per la lista dei film ed uno per il genere.
 function getAverageRating(moviesAndSeries, genre) { 
   const filteredMoviesAndSeries = moviesAndSeries.filter(movieOrSeries => movieOrSeries.genre === genre);
